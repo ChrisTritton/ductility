@@ -1,7 +1,7 @@
 mod utils;
 
-use wasm_bindgen::prelude::*;
 use rand::Rng;
+use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 extern "C" {
