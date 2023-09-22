@@ -1,26 +1,44 @@
 mod utils;
 
-use rand::Rng;
 use wasm_bindgen::prelude::*;
+use rand::Rng;
 
-#[wasm_bindgen]
 extern "C" {
     fn alert(s: &str);
 }
 
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, this is the beginning of the ductility testing utility library");
+
+pub mod js {
+    use super::*;
+
+    #[wasm_bindgen]
+    pub fn hello() -> String {
+        String::from("Hello, this is the beginning of the ductility testing utility library")
+    }
+
+    #[wasm_bindgen]
+    pub fn random_long_int(beg: i32, end: i32) -> i32 {
+        let mut rng = rand::thread_rng();
+
+        let random_number = rng.gen_range(beg..=end);
+
+        random_number
+    }
 }
 
-pub fn hello() -> String {
-    String::from("Hello, this is the beginning of the ductility testing utility library")
-}
 
-pub fn random_long_int(beg: i32, end: i32) -> i32 {
-    let mut rng = rand::thread_rng();
+pub mod rs {
+    use super::*;
 
-    let random_number = rng.gen_range(beg..=end);
+    pub fn hello() -> String {
+        String::from("Hello, this is the beginning of the ductility testing utility library")
+    }
 
-    random_number
+    pub fn random_long_int(beg: i32, end: i32) -> i32 {
+        let mut rng = rand::thread_rng();
+
+        let random_number = rng.gen_range(beg..=end);
+
+        random_number
+    }
 }
