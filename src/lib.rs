@@ -10,7 +10,7 @@ extern "C" {
 
 #[wasm_bindgen]
 pub fn greet() {
-    alert("Hello, blueing!");
+    alert("Hello, this is the beginning of the ductility testing utility library");
 }
 
 #[wasm_bindgen]
