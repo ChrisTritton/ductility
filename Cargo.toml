@@ -1,6 +1,6 @@
 [package]
 name = "ductility"
-version = "0.1.12"
+version = "0.1.13"
 authors = ["Christopher Tritton <c.n.tritton@gmail.com>"]
 edition = "2018"
 description = "Test Helpers for UI and API development. Written in rust, compiled to WebAssembly"
