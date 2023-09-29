@@ -1,7 +1,7 @@
 use rand::Rng;
 use wasm_bindgen::prelude::*;
 
-const LETTERS: &str = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEe.";
+const LETTERS: &str = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEe";
 const NUMBERS: &str = "123456789123456789123456789123456789123456789123456789123456789123456789";
 const LETTERS_AND_NUMBERS: &str =
     "AaBb9CcDdEe8FfGgHh7IiJjKk6LlMmN5nOoPpQ4qRrSsT3tUuVvWwX2xYyZzAa1BbCcDdEe.";
@@ -33,6 +33,59 @@ pub fn lorem(length: &str) -> String {
         ),
         _ => String::from("Please provide a valid length input."),
     }
+}
+
+#[wasm_bindgen]
+#[doc = "gens a randomized email address @kintro.co"]
+pub fn email_jenner(length: u32) -> String {
+    let domain_part = "@kintro.co";
+    let mut local_part = String::new();
+
+    for i in 1..=length {
+        local_part.push_str(&rand_char(LETTERS_AND_NUMBERS));
+    }
+
+    format!("{}{}", local_part, domain_part)
+}
+
+#[wasm_bindgen]
+#[doc = "gens a randomized username(s) taking number of names as the arg"]
+pub fn username_jenner(number_of_names: u32) -> String {
+    let mut full_name: Vec<String> = Vec::new();
+
+    fn build_word(word_len: u32) -> String {
+        let mut word = String::new();
+
+        for i in 1..=word_len {
+            word.push_str(&rand_char(LETTERS));
+        }
+
+        word
+    }
+
+    for i in 1..=number_of_names {
+        let word_len = rand::thread_rng().gen_range(1..=10);
+
+        full_name.push(build_word(word_len));
+
+        if i != number_of_names {
+            full_name.push(String::from(" "));
+        }
+    }
+
+    full_name.join("")
+}
+
+#[wasm_bindgen]
+#[doc = "returns a string of length `length` made up of letters"]
+pub fn password_jenner(length: u32) -> String {
+    let mut password = String::new();
+
+    for i in 1..=length {
+        password.push_str(&rand_char(KITCHEN_SINK));
+    }
+
+    password
 }
 
 #[wasm_bindgen]

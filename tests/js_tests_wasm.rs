@@ -11,6 +11,33 @@ fn print() {
     println!("Cthulhu Fhtagn!!!");
 }
 
+#[wasm_bindgen_test]
+fn email_jenner() {
+    let desired_len: u32 = 13;
+    let s1 = words::email_jenner(desired_len);
+
+    println!("\nThe email is: \n{:?}", s1);
+    // assert_eq!(s1.len(), desired_len + 9);
+}
+
+#[wasm_bindgen_test]
+fn username_jenner() {
+    let desired_number_of_names: u32 = 3;
+    let s1 = words::username_jenner(desired_number_of_names);
+
+    println!("\nThe username is: \n{:?}", s1);
+    // assert_eq!(s1.len(), desired_len);
+}
+
+#[wasm_bindgen_test]
+fn password_jenner() {
+    let desired_len: u32 = 13;
+    let s1 = words::password_jenner(desired_len);
+
+    println!("\nThe password is: \n{:?}", s1);
+    // assert_eq!(s1.len(), desired_len);
+}
+
 // #[wasm_bindgen_test]
 // fn lorem() {
 //     let v1 = lorem("short");

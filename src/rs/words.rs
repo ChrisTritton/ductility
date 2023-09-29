@@ -34,6 +34,18 @@ pub fn lorem(length: &str) -> String {
     }
 }
 
+#[doc = "gens a randomized email address @kintro.co"]
+pub fn email_jenner() -> String {
+    let domain_part = "@kintro.co";
+    let mut local_part = String::new();
+
+    for i in 1..=15 {
+        local_part.push_str(&rand_char(LETTERS_AND_NUMBERS));
+    }
+
+    format!("{}{}", local_part, domain_part)
+}
+
 #[doc = "takes in sample &str and returns a random char from it, used in other helpers"]
 pub fn rand_char(sample: &str) -> String {
     let mut rng = rand::thread_rng();
