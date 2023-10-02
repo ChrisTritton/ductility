@@ -119,18 +119,18 @@ fn password_jenner() {
 //     assert_eq!(s3.len(), 1000);
 // }
 
-// #[wasm_bindgen_test]
-// fn kitchen_sink_paragraph() {
-//     let s1 = kitchen_sink_paragraph(100);
-//     println!("\nParagraph with 100 characters is: \n{:?}", s1);
+#[wasm_bindgen_test]
+fn kitchen_sink_paragraph() {
+    let s1 = words::kitchen_sink_paragraph(100);
+    println!("\nParagraph with 100 characters is: \n{:?}", s1);
 
-//     let s2 = kitchen_sink_paragraph(500);
-//     println!("\nParagraph with 500 characters is: \n{:?}", s2);
+    let s2 = words::kitchen_sink_paragraph(500);
+    println!("\nParagraph with 500 characters is: \n{:?}", s2);
 
-//     let s3 = kitchen_sink_paragraph(1000);
-//     println!("\nParagraph with 1000 characters is: \n{:?}", s3);
+    let s3 = words::kitchen_sink_paragraph(1000);
+    println!("\nParagraph with 1000 characters is: \n{:?}", s3);
 
-//     assert_eq!(s1.len(), 100);
-//     assert_eq!(s2.len(), 500);
-//     assert_eq!(s3.len(), 1000);
-// }
+    assert_eq!(s1.len(), 100);
+    assert_eq!(s2.len(), 500);
+    assert_eq!(s3.len(), 1000);
+}

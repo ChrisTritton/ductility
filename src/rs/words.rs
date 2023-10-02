@@ -1,5 +1,4 @@
 use rand::Rng;
-use wasm_bindgen::prelude::*;
 
 const LETTERS: &str = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEe.";
 const NUMBERS: &str = "123456789123456789123456789123456789123456789123456789123456789123456789";
@@ -39,7 +38,7 @@ pub fn email_jenner() -> String {
     let domain_part = "@kintro.co";
     let mut local_part = String::new();
 
-    for i in 1..=15 {
+    for _i in 1..=15 {
         local_part.push_str(&rand_char(LETTERS_AND_NUMBERS));
     }
 
@@ -59,7 +58,7 @@ pub fn rand_char(sample: &str) -> String {
 pub fn paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -75,7 +74,7 @@ pub fn paragraph(length: u32) -> String {
 pub fn number_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -91,7 +90,7 @@ pub fn number_paragraph(length: u32) -> String {
 pub fn letter_and_number_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -107,7 +106,7 @@ pub fn letter_and_number_paragraph(length: u32) -> String {
 pub fn symbol_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -123,7 +122,7 @@ pub fn symbol_paragraph(length: u32) -> String {
 pub fn kitchen_sink_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {

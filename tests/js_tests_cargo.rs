@@ -27,8 +27,10 @@ fn email_jenner() {
     let desired_len: u32 = 10;
     let s1 = words::email_jenner(desired_len);
 
-    println!("\nThe email is: \n{:?}", s1);
-    // assert_eq!(s1.len(), desired_len + 9);
+    println!(
+        "\n====================> EMAIL JENNER <===================== \n{:?}\n",
+        s1
+    );
 }
 
 #[test]
@@ -36,8 +38,10 @@ fn username_jenner() {
     let desired_number_of_names: u32 = 3;
     let s1 = words::username_jenner(desired_number_of_names);
 
-    println!("\nThe username is: \n{:?}", s1);
-    // assert_eq!(s1.len(), desired_len);
+    println!(
+        "\n====================> UNAME JENNER <===================== \n{:?}\n",
+        s1
+    );
 }
 
 #[test]
@@ -45,6 +49,18 @@ fn password_jenner() {
     let desired_len: u32 = 15;
     let s1 = words::password_jenner(desired_len);
 
-    println!("\nThe password is: \n{:?}", s1);
-    // assert_eq!(s1.len(), desired_len);
+    println!(
+        "\n====================> PASSWORD JENNER <===================== \n{:?}\n",
+        s1
+    );
+}
+
+#[test]
+fn name_picker() {
+    let s1 = names::name_picker();
+
+    println!(
+        "\n====================> NAME PICKER <===================== \n{:?}\n",
+        s1
+    );
 }

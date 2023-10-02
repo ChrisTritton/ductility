@@ -46,10 +46,10 @@ fn email_jenner() {
 //     assert_eq!(1 + 1, 2);
 // }
 
-// #[test]
-// fn kitchen_sink() {
-//     let v = words::paragraph("kitchen_sink", 100);
-//     println!("\nThe kitchen sink paragraph is: \n{:?}", v);
+#[test]
+fn kitchen_sink() {
+    let v = words::kitchen_sink_paragraph(100);
+    println!("\nThe kitchen sink paragraph is: \n{:?}", v);
 
-//     assert_eq!(1 + 1, 2);
-// }
+    assert_eq!(1 + 1, 2);
+}

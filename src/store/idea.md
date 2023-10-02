@@ -1,0 +1,1 @@
+we have a const struct containing all the profile info for a profile and the fns use it to build fake users ... INCLUDING profile pics that are hosted for download via a gated api that only ductility can access? with download limits

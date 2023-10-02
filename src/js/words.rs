@@ -41,7 +41,7 @@ pub fn email_jenner(length: u32) -> String {
     let domain_part = "@kintro.co";
     let mut local_part = String::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         local_part.push_str(&rand_char(LETTERS_AND_NUMBERS));
     }
 
@@ -56,7 +56,7 @@ pub fn username_jenner(number_of_names: u32) -> String {
     fn build_word(word_len: u32) -> String {
         let mut word = String::new();
 
-        for i in 1..=word_len {
+        for _i in 1..=word_len {
             word.push_str(&rand_char(LETTERS));
         }
 
@@ -81,7 +81,7 @@ pub fn username_jenner(number_of_names: u32) -> String {
 pub fn password_jenner(length: u32) -> String {
     let mut password = String::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         password.push_str(&rand_char(KITCHEN_SINK));
     }
 
@@ -103,7 +103,7 @@ pub fn rand_char(sample: &str) -> String {
 pub fn paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -120,7 +120,7 @@ pub fn paragraph(length: u32) -> String {
 pub fn number_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -137,7 +137,7 @@ pub fn number_paragraph(length: u32) -> String {
 pub fn letter_and_number_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -154,7 +154,7 @@ pub fn letter_and_number_paragraph(length: u32) -> String {
 pub fn symbol_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
@@ -171,7 +171,7 @@ pub fn symbol_paragraph(length: u32) -> String {
 pub fn kitchen_sink_paragraph(length: u32) -> String {
     let mut paragraph: Vec<String> = Vec::new();
 
-    for i in 1..=length {
+    for _i in 1..=length {
         let x = rand::thread_rng().gen_range(1..=10);
 
         match x {
